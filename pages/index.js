@@ -35,7 +35,7 @@ export default function Home({ content }) {
 
       <div>
         <h1 className={styles.title}>What is Emily thinking...</h1>
-        {content.map((v) => (
+        {content.map((v, i) => (
           <a href={"//www.google.com/search?q=" + v[0]}>
             <div className={styles.card}>
               <p className={styles.content}>{v[0]}</p>
