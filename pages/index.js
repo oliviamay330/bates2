@@ -31,13 +31,21 @@ export default function Home({ content }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Stream of Consciousness</title>
+        <title>bates venditti</title>
         <meta name="description" content="Bates' recent thoughts" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div>
-        <h1 className={styles.title}>What is Bates Go=ogling...</h1>
+        <a href="https://cooltext.com">
+          <img
+            src="https://images.cooltext.com/5596992.png"
+            width="920"
+            height="114"
+            alt="bates is googling..."
+          />
+        </a>
+
         {content.map((v) => (
           <a key={v[0]} href={"//www.google.com/search?q=" + v[0]}>
             <div className={styles.card}>
