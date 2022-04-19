@@ -40,8 +40,7 @@ export default function Home({ content }) {
         <a href="https://cooltext.com">
           <img
             src="https://images.cooltext.com/5596992.png"
-            width="920"
-            height="114"
+            width="100%"
             alt="bates is googling..."
           />
         </a>
