@@ -7,9 +7,11 @@ export async function getServerSideProps({ query }) {
   const jwt = new google.auth.JWT(
     process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
     null,
-    (process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+    process.env.GOOGLE_SHEETS_PRIVATE_KEY || "",
     target
   );
+  // LOCAL DEV = (process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+  // PROD = process.env.GOOGLE_SHEETS_PRIVATE_KEY || "",
   const sheets = google.sheets({ version: "v4", auth: jwt });
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SPREADSHEET_ID,
@@ -30,12 +32,12 @@ export default function Home({ content }) {
     <div className={styles.container}>
       <Head>
         <title>Stream of Consciousness</title>
-        <meta name="description" content="Emily's recent thoughts" />
+        <meta name="description" content="Bates' recent thoughts" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div>
-        <h1 className={styles.title}>What is Emily thinking...</h1>
+        <h1 className={styles.title}>What is Bates Go=ogling...</h1>
         {content.map((v) => (
           <a key={v[0]} href={"//www.google.com/search?q=" + v[0]}>
             <div className={styles.card}>
