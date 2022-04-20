@@ -32,7 +32,7 @@ export default function Home({ content }) {
     <div className={styles.container}>
       <Head>
         <title>bates venditti</title>
-        <meta name="description" content="Bates' recent thoughts" />
+        <meta name="description" content="Olivia' recent thoughts" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -41,7 +41,7 @@ export default function Home({ content }) {
           <img
             src="https://images.cooltext.com/5596992.png"
             width="100%"
-            alt="bates is googling..."
+            alt="Olivia is googling..."
           />
         </a>
 
